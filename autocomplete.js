@@ -21,7 +21,7 @@
 		this.menuClass = 'dropdown-menu';
 		this.menuStyle = null;
 		this.zIndex = 100;
-		this.autoFocus = true;
+		this.autoFocus = false;
 		this.ignoreKeys = '|9|16|17|18|19|33|34|35|36|37|39|45|144|145|';
 
 		this.empty = function (jM) {
@@ -273,6 +273,27 @@
 				if (this.renderSpinner) this.renderSpinner(jMenu);
 				this.source(request, function (data) {
 					_listGen(data, query, callback);
+				});
+			}
+			else if (typeof this.source == 'string') {
+				var request = {
+					term: query
+				};
+				if (this.renderSpinner) this.renderSpinner(jMenu);
+				$.ajax({
+					url: this.source,
+					data: {term: term},
+					dataType: 'json',
+					success: function (data) {
+						_listGen(data, query, callback);
+					},
+					error: function (err) {
+						_listGen([], query, callback);
+						throw err;
+					}
+				});
+				this.source(request, function (data) {
+
 				});
 			}
 
