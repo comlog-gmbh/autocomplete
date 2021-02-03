@@ -1,0 +1,23 @@
+{
+  "name": "autocomplete",
+  "version": "0.3.0",
+  "description": "Bootstrap 4 compatible autocomplete",
+  "main": "autocomplete.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comlog-gmbh/autocomplete.git"
+  },
+  "keywords": [
+    "bootsrap",
+    "autocomlete"
+  ],
+  "author": "Anatolij Rau",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/comlog-gmbh/autocomplete/issues"
+  },
+  "homepage": "https://github.com/comlog-gmbh/autocomplete#readme"
+}

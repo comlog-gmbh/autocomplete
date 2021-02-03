@@ -1,0 +1,21 @@
+{
+  "name": "autocomplete",
+  "main": "autocomplete.js",
+  "homepage": "http://www.comlog.org",
+  "authors": [
+    "ar <a.rau@comlog.org>"
+  ],
+  "description": "Bootstrap 4 compatible autocomplete",
+  "keywords": [
+    "autocomplete",
+    "bootsrap"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
