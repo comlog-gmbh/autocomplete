@@ -59,11 +59,17 @@ $('.search-input')
 
 ## Options
 **minLength**: min length to start autocomplete. Default: 1
+
 **delay**: Timeout before display autocomplete. Default: 300 ms 
+
 **source**: Source
+
 **zIndex**: minimal zIndex. Default: 100
+
 **autoFocus**: Autofocus first match: Default false
+
 **ignoreKeys**: Default: '|9|16|17|18|19|33|34|35|36|37|39|45|144|145|'
+
 **renderMenu**: Function to create menu widget.
 
 Example:
@@ -78,6 +84,7 @@ $('.search-input')
 ```
 
 **renderItem**: Function to create menu item.
+
 Example:
 ```javascript
 $('.search-input')
