@@ -1,5 +1,5 @@
 {
-  "name": "autocomplete",
+  "name": "comlog-autocomplete",
   "version": "0.3.0",
   "description": "Bootstrap 4 compatible autocomplete",
   "main": "autocomplete.js",
@@ -14,7 +14,7 @@
     "bootsrap",
     "autocomlete"
   ],
-  "author": "Anatolij Rau",
+  "author": "COMLOG GmbH (Anatolij Rau)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/comlog-gmbh/autocomplete/issues"
