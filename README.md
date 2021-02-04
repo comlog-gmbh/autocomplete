@@ -1,5 +1,5 @@
 # autocomplete
-Bootstrap 4 compatible autocomplete
+Bootstrap 4 compatible autocomplete. Supports modals + automatic zIndex.
 
 ## Examples
 ### Static source
