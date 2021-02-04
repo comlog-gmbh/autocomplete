@@ -1,7 +1,7 @@
 {
   "name": "comlog-autocomplete",
-  "version": "0.3.0",
-  "description": "Bootstrap 4 compatible autocomplete",
+  "version": "0.3.1",
+  "description": "Bootstrap 4 compatible autocomplete. Supports modals + automatic zIndex.",
   "main": "autocomplete.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

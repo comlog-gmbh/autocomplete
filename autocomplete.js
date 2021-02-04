@@ -2,7 +2,7 @@
  * @copyright 2021 COMLOG GmbH Johannesberg
  * @author Anatolij Rau
  * @licence MIT
- * @version 0.3.0
+ * @version 0.3.1
  */
 (function ($) {
 	/**

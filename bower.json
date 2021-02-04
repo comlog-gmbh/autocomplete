@@ -5,7 +5,7 @@
   "authors": [
     "ar <a.rau@comlog.org>"
   ],
-  "description": "Bootstrap 4 compatible autocomplete",
+  "description": "Bootstrap 4 compatible autocomplete. Supports modals + automatic zIndex.",
   "keywords": [
     "autocomplete",
     "bootsrap"
