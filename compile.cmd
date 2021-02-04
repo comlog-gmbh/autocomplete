@@ -1,0 +1,1 @@
+uglifyjs  --ie8 --source-map "filename=autocomplete.js.map" --source-map "url='autocomplete.js.map'" -o autocomplete.min.js --compress --mangle -- autocomplete.js
