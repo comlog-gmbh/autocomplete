@@ -314,6 +314,8 @@
 			return null;
 		};
 
+		this.instance = function () { return this; };
+
 		// Init
 		if ($.isPlainObject(opt)) for (var i in opt) this[i] = opt[i];
 
