@@ -77,7 +77,7 @@
 
 		this.matcher = function (rowData, search, cb) {
 			var text = (rowData.label || rowData.text || rowData.value).toUpperCase();
-			if (text.indexOf(search.toUpperCase()) > -1) {
+			if (search === "" || text.indexOf(search.toUpperCase()) > -1) {
 				return cb(true);
 			}
 
@@ -207,12 +207,12 @@
 			// Click
 			if (!(item instanceof jQuery)) item = $(item);
 			item.click(function (e) {
-				jEl.trigger('autocomplete.item.click', [row, res]);
-				_this.select(e, row, res);
+				jEl.trigger('autocomplete.item.click', [row, jMenu]);
+				_this.select(e, row, jMenu);
 			});
 
 			// highlight
-			if (_this.highlight && $.isFunction(_this.highlight)) {
+			if (_this.highlight && $.isFunction(_this.highlight) && query !== "") {
 				_this.highlight(item, query);
 			}
 		};
@@ -225,7 +225,7 @@
 				return;
 			}
 			if (!$.isArray(data)) {
-				console.error('Autocomplete data is not Array');
+				throw 'Autocomplete data is not Array';
 				if ($.isFunction(callback)) callback();
 				return;
 			}
@@ -237,6 +237,7 @@
 						row = {label: row};
 					}
 					if (!row.label && row.text) row.label = row.text;
+					if (!row.label && row.value) row.label = row.value;
 
 					if ($.isFunction(_this.matcher)) {
 						_this.matcher(row, query, function (res) {
@@ -297,7 +298,7 @@
 				});
 			}
 
-			return null;
+			return jEl;
 		};
 
 		/**
