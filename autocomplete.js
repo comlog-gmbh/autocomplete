@@ -263,7 +263,6 @@
 		}
 
 		this.search = function (query, callback) {
-			if (!query) query = jEl.val();
 			if ($.isArray(this.source) || this.source instanceof Array) {
 				_listGen(this.source, query, callback);
 			}
