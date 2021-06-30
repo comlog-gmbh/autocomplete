@@ -138,21 +138,25 @@
 
 			// focus aufheben
 			jChildren.filter('.active').removeClass('active');
-			if (index === false) return null;
+			if (index === false) return jEl;
 			if (index === true) return this.active(0);
 
+			var jItem = null;
 			// Focus außerhalb > length
 			if (index >= jChildren.length) {
-				jChildren.eq(jChildren.length-1).addClass('active');
+				jItem = jChildren.eq(jChildren.length-1).addClass('active');
 			}
 			// Focus außerhalb < 0
 			else if (index < 0) {
-				jChildren.eq(0).addClass('active');
+				jItem = jChildren.eq(0).addClass('active');
 			}
 			else if (index >= 0) {
-				jChildren.eq(index).addClass('active');
+				jItem = jChildren.eq(index).addClass('active');
 			}
-			return null;
+
+			this.focus({}, jItem.data('data'), jItem);
+
+			return jEl;
 		}
 
 		this.cursorDown = function () {
@@ -170,7 +174,12 @@
 		this.select = function (event, data, jItem) {
 			jEl.trigger('autocomplete.preselect', [data, jItem]);
 			jEl.val(data.value || data.label || data.text);
-			jEl.trigger('autocomplete.select', [data, jItem]);
+			jEl.trigger('autocomplete.select', [data, jItem, jMenu]);
+		};
+
+		this.focus = function (event, data, jItem) {
+			jEl.val(data.value || data.label || data.text);
+			jEl.trigger('autocomplete.focus', [data, jItem, jMenu]);
 		};
 
 		this.toggle = function () {
@@ -207,8 +216,8 @@
 			// Click
 			if (!(item instanceof jQuery)) item = $(item);
 			item.click(function (e) {
-				jEl.trigger('autocomplete.item.click', [row, jMenu]);
-				_this.select(e, row, jMenu);
+				jEl.trigger('autocomplete.item.click', [row, item, jMenu]);
+				_this.select(e, row, item);
 			});
 
 			// highlight
