@@ -1,6 +1,6 @@
 {
   "name": "comlog-autocomplete",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Bootstrap 4 compatible autocomplete. Supports modals + automatic zIndex.",
   "main": "autocomplete.js",
   "scripts": {
