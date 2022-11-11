@@ -101,9 +101,9 @@
 					var pos = 0;
 
 					while ((pos = ltext.indexOf(str, pos)) != -1) {
-						var match = text.substr(pos, str.length);
+						var match = text.substring(pos, pos + str.length);
 						var rep = '<b>'+match+'</b>';
-						text = text.substr(0, pos) + rep + text.substr(pos + str.length);
+						text = text.substring(0, pos) + rep + text.substring(pos + str.length);
 						ltext = text.toLowerCase();
 						pos = pos+rep.length;
 					}
@@ -154,7 +154,7 @@
 				jItem = jChildren.eq(index).addClass('active');
 			}
 
-			this.focus({}, jItem.data('data'), jItem);
+			if (jItem) this.focus({}, jItem.data('data'), jItem);
 
 			return jEl;
 		}
