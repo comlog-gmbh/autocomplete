@@ -229,8 +229,13 @@
 		var _listGen = function (data, query, callback) {
 			jMenu.html('');
 			if (!data || data.length < 1) {
-				if ($.isFunction(_this.empty)) _this.empty(jMenu);
-				if ($.isFunction(callback)) callback();
+				if (_this.empty === false) {
+					if ($.isFunction(callback)) callback();
+					_this.hide();
+				} else {
+					if ($.isFunction(_this.empty)) _this.empty(jMenu);
+					if ($.isFunction(callback)) callback();
+				}
 				return;
 			}
 			if (!$.isArray(data)) {
